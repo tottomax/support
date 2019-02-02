@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+# coding: utf-8
+ 
+# In[ ]:
+ 
+ 
+# Instalar las librerias necesarias
+import sys
+# !conda install --yes --prefix {sys.prefix} tweepy
+get_ipython().system('{sys.executable} -m pip install tweepy')
+ 
+ 
+# In[ ]:
+ 
+ 
+# Twitter API Security Tokens
+consumer_key = 'ony9q30MJ7IeadTRCSrx1N3Gr'
+consumer_secret = 'LfKUnBR2M9xjSg7y772pLmArrnPHnE2lrAJcj4eajkgFzOoQDD'
+access_token = '34685302-4rzON3JWOanJysCy3q0TvS6lYRFCDuwwVk7WczhzD'
+access_secret = 'JagXQ22Yd8D6Nq9Ok8UbQcdtb35mywuVKEm5t8ltIPMW7'
+ 
+ 
+# In[ ]:
+ 
+ 
+# Importar las librerias:
+# Tweepy: https://tweepy.readthedocs.io/en/3.7.0/index.html
+# JSON: https://docs.python.org/3/library/json.html
+import tweepy
+import json
+ 
+ 
+# In[ ]:
+ 
+ 
+# Autenticacion en Twitter usando los tokens
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_secret)
+ 
+ 
+# In[ ]:
+ 
+ 
+# Obtener acceso al API para hacer la solicitud de datos
+api = tweepy.API(auth)
+ 
+ 
